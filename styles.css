@@ -1,0 +1,101 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: rgb(255, 224, 183);
+    font-family: 'Montserrat', sans-serif;
+    overscroll-behavior: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(508px, 1fr);
+    grid-template-rows: 100px auto;
+}
+
+
+.header {
+    background: rgb(77, 47, 8);
+    padding: 20px 50px;
+    font-size: 2.7rem;
+    font-weight: bolder;
+    color: white;
+}
+
+.content {
+    background: burlywood;
+}
+
+.hidden {
+    display: none;
+}
+
+.content .modal {
+    z-index: 2;
+    position: absolute;
+    width: auto;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    margin: 0 auto;
+}
+
+.content .modal-form {
+    border-radius: 24px;
+    font-size: 1.4rem;
+    background: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content h3 {
+    margin: 0px;
+    padding: 12px 0px;
+    align-self: center;
+}
+
+.content input {
+    padding: 8px;
+}
+
+.content button#submit {
+    font-size: 1.2rem;
+    background:rgb(255, 224, 183);
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    width: 60%;
+    align-self: center;
+}
+
+.content .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+
+
+.content .library {
+
+}
+
+.content button#add {
+    position: fixed;
+    background: rgb(77, 47, 8);
+    border: 2px solid black;
+    color: white;
+    bottom: 50px;
+    right: 50px;
+    font-size: 40px;
+    border-radius: 34px;
+    padding: 10px 21px;
+}

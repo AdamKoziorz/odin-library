@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Library Application
+        </div>
+        <div class="content">
+            <section class="modal hidden">
+                <form class="modal-form" id="modal-form">
+                    <h3>Add Book</h3>
+                    <input type="text" id="title" placeholder="Title" required="" maxlength="100">
+                    <input type="text" id="author" placeholder="Author" required="" maxlength="100">
+                    <input type="number" id="pages" placeholder="Pages" required="" max="10000">
+                    <div class="is-read">
+                        <label for="is-read">Did you read it?</label>
+                        <input class="checkbox" type="checkbox" id="isRead">
+                    </div>
+                    <button id="submit" type="submit">Submit</button>
+                    </form>
+            </section>
+            <div class="overlay hidden"></div>
+            <div class="library"></div>
+            <button type="button" id="add">+</button>
+        </div>
+    </div>
+</body>
+</html>
