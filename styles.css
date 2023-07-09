@@ -4,6 +4,7 @@ html, body {
     background: rgb(255, 224, 183);
     font-family: 'Montserrat', sans-serif;
     overscroll-behavior: none;
+    word-wrap: break-word;
 }
 
 .container {
@@ -43,7 +44,7 @@ html, body {
     border-radius: 24px;
     font-size: 1.4rem;
     background: white;
-    padding: 40px;
+    padding: 40px 80px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -77,15 +78,78 @@ html, body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
     z-index: 1;
 }
 
-
-
 .content .library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 50px 200px;
+    gap: 50px;
+    background: rgb(255, 224, 183);
+}
 
+.content .book {
+    color: white;
+    padding: 20px 20px 48px 20px;
+    border-radius: 20px;
+    box-shadow: 1rem 0 0 0 white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .book .book-info, .content .book .book-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.content .book.read {
+    background: rgb(24, 63, 6);
+}
+
+.content .book.not-read {
+    background: rgb(83, 24, 24);
+}
+
+.content .book .book-info p {
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.content .book .book-info p:nth-child(1) {
+    font-size: 2rem;
+}
+
+.content .book .book-info p:not(:nth-child(1)) {
+    margin: 0px;
+}
+
+.content .book .book-info p:nth-child(3) {
+    margin-bottom: 28px;
+}
+
+.content .book button {
+    width: 120px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 1.2rem;
+}
+
+.content .book button:nth-child(1).read {
+    background-color: rgb(227, 250, 217);
+}
+
+.content .book button:nth-child(1).not-read {
+    background-color: rgb(249, 225, 225);
 }
 
 .content button#add {

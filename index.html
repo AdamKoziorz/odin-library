@@ -13,15 +13,15 @@
 <body>
     <div class="container">
         <div class="header">
-            Library Application
+            Library App
         </div>
         <div class="content">
             <section class="modal hidden">
                 <form class="modal-form" id="modal-form">
                     <h3>Add Book</h3>
-                    <input type="text" id="title" placeholder="Title" required="" maxlength="100">
-                    <input type="text" id="author" placeholder="Author" required="" maxlength="100">
-                    <input type="number" id="pages" placeholder="Pages" required="" max="10000">
+                    <input type="text" id="title" placeholder="Title" maxlength="100" required>
+                    <input type="text" id="author" placeholder="Author" maxlength="100" required>
+                    <input type="number" id="pages" placeholder="Pages" max="10000" required>
                     <div class="is-read">
                         <label for="is-read">Did you read it?</label>
                         <input class="checkbox" type="checkbox" id="isRead">
@@ -30,7 +30,7 @@
                     </form>
             </section>
             <div class="overlay hidden"></div>
-            <div class="library"></div>
+            <div class="library" id="library"></div>
             <button type="button" id="add">+</button>
         </div>
     </div>
