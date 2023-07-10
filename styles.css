@@ -42,7 +42,7 @@ html, body {
 
 .content .modal-form {
     border-radius: 24px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     background: white;
     padding: 40px 80px;
     display: flex;
@@ -56,8 +56,19 @@ html, body {
     align-self: center;
 }
 
-.content input {
+.content input[type="text"], .content input[type="number"] {
     padding: 8px;
+    border-radius: 8px;
+    border-color: black;
+}
+
+.content label {
+    font-size: 1.2rem;
+}
+
+.content input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-left: 8px;
 }
 
 .content button#submit {
@@ -65,10 +76,15 @@ html, body {
     background:rgb(255, 224, 183);
     padding: 12px;
     border-radius: 12px;
-    margin-top: 12px;
+    margin-top: 24px;
     width: 60%;
     align-self: center;
 }
+
+.content button#submit:hover {
+    background:rgb(241, 201, 149);
+}
+
 
 .content .overlay {
     position: fixed;
@@ -163,3 +179,24 @@ html, body {
     border-radius: 34px;
     padding: 10px 21px;
 }
+
+
+
+/* VERY basic responsiveness for mobile devices */
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .content .library {
+        padding: 50px 50px;
+        display: flex;
+        flex-direction: column;
+        max-width: 100vh;
+        gap: 50px;
+    }
+
+    .content .modal-form {
+        padding: 40px 40px;
+    }
+ }

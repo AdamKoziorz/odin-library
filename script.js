@@ -28,6 +28,10 @@ function Library() {
   this.getBook = function(title, author) {
     return books.find((book) => (book.title === title) && (book.author === author));
   }
+
+  this.existBook = function(title, author) {
+    return books.some((book) => (book.title === title) && (book.author === author));
+  }
 }
 
 const libraryModel = new Library();
@@ -61,6 +65,7 @@ const updateLibraryView = () => {
   }
 }
 
+// Given a book, generates a book card in the DOM and adds it to the library view
 const generateBookView = (book) => {
     const bookCard = document.createElement('div');
     const info = document.createElement('div');
@@ -102,16 +107,24 @@ const generateBookView = (book) => {
     library.appendChild(bookCard);
 }
 
+// Validates the add book form - only adding the book if it is unique (title, author)
+// and if all required information has been filled out
 function submitBook(e) {
   if (addForm.checkValidity()) {
     e.preventDefault();
+    
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const pages = document.getElementById("pages").value;
     const isRead = document.getElementById("isRead").checked;
-    libraryModel.addBook(title, author, pages, isRead);
-    updateLibraryView();
-    closeAddModal();
+
+    if (!libraryModel.existBook(title, author)) {
+      libraryModel.addBook(title, author, pages, isRead);
+      updateLibraryView();
+      closeAddModal();
+    } else {
+      alert("Book already exists!");
+    }
   }
 }
 
