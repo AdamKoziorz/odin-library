@@ -18,7 +18,7 @@ function Library() {
   }
 
   this.removeBook = function(title, author) {
-    books = books.filter((book) => (book.title !== title) && (book.author !== author));
+    books = books.filter((book) => (book.title !== title) || (book.author !== author));
   }
 
   this.getAllBooks = function() {

@@ -10,7 +10,6 @@ html, body {
 .container {
     display: grid;
     grid-template-columns: minmax(508px, 1fr);
-    grid-template-rows: 100px auto;
 }
 
 
@@ -188,6 +187,10 @@ html, body {
         grid-template-columns: 1fr;
     }
 
+    .header {
+        text-align: center;
+    }
+
     .content .library {
         padding: 50px 50px;
         display: flex;
@@ -198,5 +201,14 @@ html, body {
 
     .content .modal-form {
         padding: 40px 40px;
+    }
+
+    .content input[type="text"], .content input[type="number"] {
+        width: 200px;
+    }
+
+    .content button#add {
+        bottom: 20px;
+        right: 20px;
     }
  }
